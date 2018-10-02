@@ -51,13 +51,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\button.cs" />
      <Compile Include="Assets\Scripts\camera.cs" />
      <Compile Include="Assets\Scripts\camera_01.cs" />
+     <Compile Include="Assets\Scripts\door.cs" />
      <Compile Include="Assets\Scripts\ignore_collision.cs" />
+     <Compile Include="Assets\Scripts\plateform_movment.cs" />
      <Compile Include="Assets\Scripts\playerScript_ex00.cs" />
      <Compile Include="Assets\Scripts\playerScript_ex01.cs" />
+     <Compile Include="Assets\Scripts\teleport.cs" />
      <Compile Include="Assets\Scripts\trigger_exit.cs" />
      <Compile Include="Assets\Scripts\trigger_exit_ex02.cs" />
+     <Compile Include="Assets\Scripts\trigger_exit_ex03.cs" />
  <Reference Include="UnityEngine.UIAutomation">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UIAutomation/UnityEngine.UIAutomation.dll</HintPath>
  </Reference>
