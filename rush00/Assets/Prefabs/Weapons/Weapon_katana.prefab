@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1565582081735280}
+  m_IsPrefabParent: 1
+--- !u!1 &1565582081735280
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4673567424305414}
+  - component: {fileID: 114311699322196720}
+  m_Layer: 0
+  m_Name: Weapon_katana
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4673567424305414
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1565582081735280}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.63051325, y: 6.4387417, z: -0.43361104}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114311699322196720
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1565582081735280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d84a749939dd468b884eef175a39dd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  equiped_sprite: {fileID: 21300000, guid: 6a80894c63238427280b822e403bcc63, type: 3}
+  ground_weapon_prefab:
+  - {fileID: 1238214919439706, guid: 1cee690ff8a8b41afa9d08326b03b49e, type: 2}
+  - {fileID: 1727983070846204, guid: 4e93e0cb635a24c6f8f05fd9af6af300, type: 2}
+  - {fileID: 1533664967744546, guid: ccb59888fcc984ca6bd5491bed16e34f, type: 2}
+  - {fileID: 1015189646212482, guid: ff4a5d8f9ffdc42a7a27a107ed86c68c, type: 2}
+  weapon_id: 0
+  ammo: 0
+  cac: 1
+  fireRate: 0.5
+  bullet_type: {fileID: 1432081797679106, guid: 7e82c4bafebfb45daa576900c74bd610,
+    type: 2}
+  audioclip: {fileID: 8300000, guid: 41ba8b787dda34228adbcfeae0635a4c, type: 3}
+  eject: {fileID: 8300000, guid: 524ddaeab25d84e5db2258e397f9f900, type: 3}
+  ammoText: {fileID: 0}

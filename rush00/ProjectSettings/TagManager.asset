@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - GroundWeapon
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Floor
+  - Player
+  - Weapon
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: GroundWeapon
+    uniqueID: 2788881993
+    locked: 0
+  - name: Player
+    uniqueID: 2217161711
+    locked: 0
+  - name: Equipped
+    uniqueID: 4191264215
+    locked: 0
+  - name: Bullet
+    uniqueID: 4237956827
+    locked: 0
+  - name: UI
+    uniqueID: 2298905447
+    locked: 0
