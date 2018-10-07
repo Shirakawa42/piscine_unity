@@ -53,6 +53,16 @@ public class Weapon : MonoBehaviour {
 		GetComponent<AudioSource>().Play();
 		Instantiate(bullet_type, transform.position, transform.rotation * Quaternion.Euler(-Vector3.forward * 90));
 		Invoke("fireRateHandler", fireRate);
+
+		if (weapon_id != 0)
+		{
+			Collider[] 	colliders = Physics.OverlapSphere(transform.position, 5.0f);
+			foreach (Collider collider in colliders)
+			{
+				if (collider.tag== "Enemy")
+					collider.transform.parent.GetComponent<EnemyScript>().alert();
+			}
+		}
 	}
 
 	public void EnemyShoot () {
@@ -68,8 +78,8 @@ public class Weapon : MonoBehaviour {
 	}
 
 	public void drop () {
-		GetComponent<AudioSource>().clip = eject;
-		GetComponent<AudioSource>().Play();
+        SoundManager.manager.PlayerDropWeaponSound();
+
 		GameObject 	cpy = Instantiate(ground_weapon_prefab[weapon_id], transform.parent.transform.position, transform.rotation * Quaternion.Euler(-Vector3.forward * 90));
 		cpy.GetComponent<Rigidbody>().AddForce(-transform.up * 300.0f);
 		cpy.GetComponent<GroundWeapon>().ammo = ammo;

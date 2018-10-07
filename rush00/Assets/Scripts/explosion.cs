@@ -7,12 +7,11 @@ public class explosion : MonoBehaviour {
 	void OnTriggerEnter (Collider other) {
 		if (other.tag == "Player")
 		{
-			Debug.Log("killed");
-			// kill player
+			other.GetComponent<Player>().die();
 		}
 		else if (other.tag == "Enemy")
 		{
-			// kill enemy
+			other.transform.parent.GetComponent<EnemyScript>().dead();
 		}
 		else if (other.tag == "DOOR")
 		{

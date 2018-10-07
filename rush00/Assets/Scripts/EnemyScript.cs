@@ -17,8 +17,6 @@ public class EnemyScript : MonoBehaviour {
 	public 	Transform 		target;
 	public 	Weapon 			weapon;
 
-	private bool			isShooting = false;
-
 	private	int				waypointIndex = 0;
 	private	bool			isMoving;
 	private bool			inRange;
@@ -33,10 +31,12 @@ public class EnemyScript : MonoBehaviour {
 
 	private NavMeshAgent 	agent;
 	private Animator		animator;
+	private EnemyManager	enemyManager;
 
 	void Start () {
 		agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
 		animator = GetComponent<Animator>();
+		enemyManager = GameObject.Find("EnemyManager").GetComponent<EnemyManager>();
 		sightRange = GetComponent<SphereCollider>().radius;
 
 		agent.speed = speed;
@@ -64,11 +64,12 @@ public class EnemyScript : MonoBehaviour {
 			hasLost = (inRange && canSee) ? false : true;
 			timer = (hasLost) ? (timer + Time.deltaTime) : 0f;
 
+			
 			//Ennemi avance tant qu'il est à une certaine distance de la target
 			if (timer < seekingDuration || isAlerted){
 				if (!isStunned){
 					agent.isStopped = false;
-
+					alertSign.SetActive(true);
 					if (isAlerted && !hasLost){
 						isAlerted = false;
 					}
@@ -76,10 +77,10 @@ public class EnemyScript : MonoBehaviour {
 					if (Vector3.Distance(transform.position, target.position)> stopDistance){
 						agent.SetDestination(target.position);
 					}
-					toggleShoot(true);
+					transform.GetChild(transform.childCount - 1).GetComponent<Weapon>().EnemyShoot();
 				} else {
 					agent.isStopped = true;
-					toggleShoot(false);
+				
 					stunnedTimer += Time.deltaTime;
 
 					if (stunnedTimer >= stuntDuration){
@@ -88,7 +89,8 @@ public class EnemyScript : MonoBehaviour {
 					}
 				}
 			} else {
-				toggleShoot(false);
+				alertSign.SetActive(false);
+				
 				//Parcourt un chemin si il existe
 				if (path && path.childCount > 0){
 					Transform waypoint = path.GetChild(waypointIndex).transform;
@@ -147,32 +149,14 @@ public class EnemyScript : MonoBehaviour {
 		return Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * rotationSpeed);
 	}
 
-	IEnumerator shoot() {
-		for (;;){
-			if (canSee){
-				transform.GetChild(transform.childCount - 1).GetComponent<Weapon>().EnemyShoot();
-			}
-			yield return new WaitForSeconds(shootInterval);
-		}
-	}
-
-	public void toggleShoot(bool val){
-		if (val && !isShooting){
-			alertSign.SetActive(true);
-			isShooting = true;
-			StartCoroutine(shoot());
-		} else if (!val && isShooting) {
-			alertSign.SetActive(false);
-			isShooting = false;
-			StopCoroutine(shoot());
-		}
-	}
 
 	public void setTarget(Transform t){
 		target = t;
 	}
 
-	public void dead(){
+	public void dead() {
+        SoundManager.manager.EnemyDieSound();
+		enemyManager.updateEnemyCount();
 		Destroy(transform.parent.gameObject);
 	}
 

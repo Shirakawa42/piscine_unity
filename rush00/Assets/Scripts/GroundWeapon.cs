@@ -27,6 +27,7 @@ public class GroundWeapon : MonoBehaviour {
 
 	void OnTriggerStay (Collider other) {
 		if (Input.GetKeyDown("e") && other.transform.tag == "Player") {
+            SoundManager.manager.PlayerGetWeaponSound();
 			given_weapon.ammo = ammo;
 			given_weapon.weapon_id = id;
 			given_weapon.equip(

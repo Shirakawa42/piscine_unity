@@ -6,6 +6,7 @@ public class playerMovement : MonoBehaviour {
 
 	public float		speed = 5.0f;
 	public GameObject	legs;
+	public bool			canMove = true;
 	private Rigidbody	rb;
 	private Animator	anim;
 	private float		moveH;
@@ -33,23 +34,25 @@ public class playerMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKey("w"))
-			moveV = speed;
-		else if (Input.GetKey("s"))
-			moveV = -speed;
-		else
-			moveV = 0.0f;
-		if (Input.GetKey("a"))
-			moveH = -speed;
-		else if (Input.GetKey("d"))
-			moveH = speed;
-		else
-			moveH = 0.0f;
-		if (moveH != 0.0f || moveV != 0.0f)
-			anim.SetTrigger("moving");
-		else
-			anim.ResetTrigger("moving");
-		rb.velocity = new Vector3(moveH, 0.0f, moveV);
-		faceMousePosition();
+		if (canMove){
+			if (Input.GetKey("w"))
+				moveV = speed;
+			else if (Input.GetKey("s"))
+				moveV = -speed;
+			else
+				moveV = 0.0f;
+			if (Input.GetKey("a"))
+				moveH = -speed;
+			else if (Input.GetKey("d"))
+				moveH = speed;
+			else
+				moveH = 0.0f;
+			if (moveH != 0.0f || moveV != 0.0f)
+				anim.SetTrigger("moving");
+			else
+				anim.ResetTrigger("moving");
+			rb.velocity = new Vector3(moveH, 0.0f, moveV);
+			faceMousePosition();
+		}
 	}
 }

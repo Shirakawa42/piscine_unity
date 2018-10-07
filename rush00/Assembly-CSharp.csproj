@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{9A4FAF9C-1318-64B8-6E23-05E79FCE53CF}</ProjectGuid>
+    <ProjectGuid>{114C7073-BD57-515D-1E3F-8A4543A0EFEB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -54,12 +54,22 @@
      <Compile Include="Assets\Scripts\BulletScript.cs" />
      <Compile Include="Assets\Scripts\cameraFollow.cs" />
      <Compile Include="Assets\Scripts\destroyOnCollide.cs" />
+     <Compile Include="Assets\Scripts\endGame.cs" />
+     <Compile Include="Assets\Scripts\EnemyManager.cs" />
      <Compile Include="Assets\Scripts\EnemyScript.cs" />
      <Compile Include="Assets\Scripts\explosion.cs" />
      <Compile Include="Assets\Scripts\GroundWeapon.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\playerMovement.cs" />
      <Compile Include="Assets\Scripts\rainbowColor.cs" />
+     <Compile Include="Assets\Scripts\SoundManager.cs" />
+     <Compile Include="Assets\Scripts\UI\EndLevelActions.cs" />
+     <Compile Include="Assets\Scripts\UI\GameController.cs" />
+     <Compile Include="Assets\Scripts\UI\MenuButtons.cs" />
+     <Compile Include="Assets\Scripts\UI\MenuButtonsManager.cs" />
+     <Compile Include="Assets\Scripts\UI\StartGameActions.cs" />
+     <Compile Include="Assets\Scripts\UI\UIManager.cs" />
+     <Compile Include="Assets\Scripts\UI\WinLooseUI.cs" />
      <Compile Include="Assets\Scripts\Weapon.cs" />
      <None Include="Assets\Fonts\friday13\Font License.txt" />
      <None Include="Assets\Fonts\d3digitalism\Read Me.txt" />
