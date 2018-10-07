@@ -57,6 +57,7 @@ MonoBehaviour:
   - {fileID: 1727983070846204, guid: 4e93e0cb635a24c6f8f05fd9af6af300, type: 2}
   - {fileID: 1533664967744546, guid: ccb59888fcc984ca6bd5491bed16e34f, type: 2}
   - {fileID: 1015189646212482, guid: ff4a5d8f9ffdc42a7a27a107ed86c68c, type: 2}
+  - {fileID: 1307341063783564, guid: cf1209c76d6ee4b7180fbc9c73c199ea, type: 2}
   weapon_id: 3
   ammo: 10
   cac: 0

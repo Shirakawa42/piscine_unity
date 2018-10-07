@@ -8,6 +8,22 @@ public class GroundWeapon : MonoBehaviour {
 	public GameObject 	ground_weapon_prefab;
 	public int 			ammo;
 	public int 			id;
+	private Rigidbody 	rb;
+
+	void Start () {
+		rb = GetComponent<Rigidbody>();
+	}
+
+	void OnTriggerEnter (Collider other) {
+		if (other.tag == "enemy" && id != 0 && Mathf.Abs(rb.velocity.x) >= 3 || Mathf.Abs(rb.velocity.y) >= 3 || Mathf.Abs(rb.velocity.z) >= 3)
+		{
+			// Stun enemy
+		}
+		else if (other.tag == "enemy" && id == 0 && Mathf.Abs(rb.velocity.x) >= 3 || Mathf.Abs(rb.velocity.y) >= 3 || Mathf.Abs(rb.velocity.z) >= 3)
+		{
+			// kill enemy
+		}
+	}
 
 	void OnTriggerStay (Collider other) {
 		if (Input.GetKeyDown("e") && other.transform.tag == "Player") {

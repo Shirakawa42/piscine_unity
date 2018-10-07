@@ -55,8 +55,8 @@ public class Weapon : MonoBehaviour {
 	public void drop () {
 		GetComponent<AudioSource>().clip = eject;
 		GetComponent<AudioSource>().Play();
-		GameObject 	cpy = Instantiate(ground_weapon_prefab[weapon_id], transform.position, transform.rotation * Quaternion.Euler(-Vector3.forward * 90));
-		cpy.GetComponent<Rigidbody>().AddForce(transform.right * 300.0f);
+		GameObject 	cpy = Instantiate(ground_weapon_prefab[weapon_id], transform.parent.transform.position, transform.rotation * Quaternion.Euler(-Vector3.forward * 90));
+		cpy.GetComponent<Rigidbody>().AddForce(-transform.up * 300.0f);
 		cpy.GetComponent<GroundWeapon>().ammo = ammo;
 		fireRate = -1.0f;
 		GetComponent<SpriteRenderer>().sprite = null;

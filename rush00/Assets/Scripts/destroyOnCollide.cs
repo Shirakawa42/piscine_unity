@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class destroyOnCollide : MonoBehaviour {
 
-	void 	OnCollisionEnter(Collision other)
+	void 	OnTriggerEnter(Collider other)
 	{
-		Destroy(transform.parent.gameObject);
+		Debug.Log("test");
+		//Destroy(transform.parent.gameObject);
 	}
 }

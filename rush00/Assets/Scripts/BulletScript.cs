@@ -7,7 +7,12 @@ public class BulletScript : MonoBehaviour {
 	public float 	bullet_speed;
 	public bool 	enemy_bullet;
 	public float 	range;
+	public bool 	katana = false;
+	public bool 	destroyOnCollide = false;
 	private Rigidbody rb;
+	public bool 		explode = false;
+	public GameObject 	explosion;
+	public float 		explosion_scale = 1.0f;
 
 	void OnTriggerEnter (Collider other) {
 		if (enemy_bullet && other.tag == "Player")
@@ -18,6 +23,23 @@ public class BulletScript : MonoBehaviour {
 		{
 			// kill enemy
 		}
+		else if (other.tag == "AMMO" && katana)
+		{
+			Destroy(other.transform.parent.gameObject);
+		}
+		else if (destroyOnCollide && other.tag == "MAP")
+		{
+			Die();
+		}
+	}
+
+	void Die () {
+			if (explode)
+			{
+				GameObject tmp = Instantiate(explosion, transform.position, transform.rotation);
+				tmp.transform.localScale = new Vector3(explosion_scale, explosion_scale, 1.0f);
+			}
+			Destroy(this.gameObject);
 	}
 
 	void Start () {
@@ -28,6 +50,8 @@ public class BulletScript : MonoBehaviour {
 	void Update () {
 		range -= bullet_speed / 100;
 		if (range <= 0)
-			Destroy(this.gameObject);
+		{
+			Die();
+		}
 	}
 }

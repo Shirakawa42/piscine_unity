@@ -20,10 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4034591583751768}
   - component: {fileID: 136860728974939872}
-  - component: {fileID: 114575916388884196}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: collider
-  m_TagString: Untagged
+  m_TagString: AMMO
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,7 +41,7 @@ GameObject:
   - component: {fileID: 114564420159473310}
   m_Layer: 0
   m_Name: Bullet_sniper
-  m_TagString: Untagged
+  m_TagString: AMMO
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87,7 +86,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!65 &65029786195247326
 BoxCollider:
@@ -99,7 +98,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.34375, y: 0.31250006, z: 0.20000005}
+  m_Size: {x: 1.34375, y: 0.31250006, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114564420159473310
 MonoBehaviour:
@@ -114,18 +113,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet_speed: 15
   enemy_bullet: 0
-  range: 5
---- !u!114 &114575916388884196
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1377270540935896}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 863358b799ce74fdaa78f6e827f58312, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  range: 7
+  katana: 0
+  destroyOnCollide: 1
 --- !u!136 &136860728974939872
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -170,8 +160,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -57010469
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e965b9e9be6b84215a459a119303fd98, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -20,10 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4825258218092254}
   - component: {fileID: 136075527624743532}
-  - component: {fileID: 114082174787340610}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: collider
-  m_TagString: Untagged
+  m_TagString: AMMO
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,7 +41,7 @@ GameObject:
   - component: {fileID: 114313331623114008}
   m_Layer: 0
   m_Name: Bullet_rocket
-  m_TagString: Untagged
+  m_TagString: AMMO
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87,7 +86,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!65 &65209428120452064
 BoxCollider:
@@ -99,19 +98,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 0.31250006, z: 0.20000005}
+  m_Size: {x: 0.8, y: 0.31250006, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114082174787340610
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1563287402609732}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 863358b799ce74fdaa78f6e827f58312, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114313331623114008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -125,7 +113,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet_speed: 7
   enemy_bullet: 0
-  range: 4
+  range: 5
+  katana: 0
+  destroyOnCollide: 1
+  explode: 1
+  explosion: {fileID: 1884001243007782, guid: aa10f0568dc4b483e96f6269f83150d0, type: 2}
+  explosion_scale: 2
 --- !u!136 &136075527624743532
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -170,8 +163,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -57010469
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6e6cd268a39814164b43e97b0f7a3727, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

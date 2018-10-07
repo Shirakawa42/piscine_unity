@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4632684046233446}
   - component: {fileID: 135440441361339792}
+  - component: {fileID: 114664642516382490}
   m_Layer: 10
   m_Name: collide
   m_TagString: Untagged
@@ -86,7 +87,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 52
   m_CollisionDetection: 0
 --- !u!65 &65501617366850398
 BoxCollider:
@@ -100,6 +101,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114664642516382490
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1215507548613286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 863358b799ce74fdaa78f6e827f58312, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114979422531588052
 MonoBehaviour:
   m_ObjectHideFlags: 1
