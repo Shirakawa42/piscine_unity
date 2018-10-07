@@ -15,13 +15,13 @@ public class GroundWeapon : MonoBehaviour {
 	}
 
 	void OnTriggerEnter (Collider other) {
-		if (other.tag == "enemy" && id != 0 && Mathf.Abs(rb.velocity.x) >= 3 || Mathf.Abs(rb.velocity.y) >= 3 || Mathf.Abs(rb.velocity.z) >= 3)
+		if (other.tag == "Enemy" && id != 0 && (Mathf.Abs(rb.velocity.x) >= 3 || Mathf.Abs(rb.velocity.y) >= 3 || Mathf.Abs(rb.velocity.z) >= 3))
 		{
-			// Stun enemy
+			other.transform.parent.GetComponent<EnemyScript>().stunt();
 		}
-		else if (other.tag == "enemy" && id == 0 && Mathf.Abs(rb.velocity.x) >= 3 || Mathf.Abs(rb.velocity.y) >= 3 || Mathf.Abs(rb.velocity.z) >= 3)
+		else if (other.tag == "Enemy" && id == 0 && (Mathf.Abs(rb.velocity.x) >= 3 || Mathf.Abs(rb.velocity.y) >= 3 || Mathf.Abs(rb.velocity.z) >= 3))
 		{
-			// kill enemy
+			other.transform.parent.GetComponent<EnemyScript>().dead();
 		}
 	}
 

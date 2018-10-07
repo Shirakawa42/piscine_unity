@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 114313331623114008}
   m_Layer: 0
   m_Name: Bullet_rocket
-  m_TagString: AMMO
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet_speed: 7
   enemy_bullet: 0
-  range: 5
+  range: 7
   katana: 0
   destroyOnCollide: 1
   explode: 1

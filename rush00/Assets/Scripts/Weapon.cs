@@ -29,11 +29,14 @@ public class Weapon : MonoBehaviour {
 		bs.weapon_id = weapon_id;
 		bs.audioclip = audioclip;
 		bs.eject = eject;
-		if (!cac)
-			bs.ammoText.text = "AMMO\n" + ammo;
-		else
-			bs.ammoText.text = "AMMO\nINFINITE";
+		if (bs.ammoText)
+		{
+			if (!cac)
+				bs.ammoText.text = "AMMO\n" + ammo;
+			else
+				bs.ammoText.text = "AMMO\nINFINITE";
 		}
+	}
 
 	private void fireRateHandler () {
 		canShoot = true;
@@ -50,6 +53,18 @@ public class Weapon : MonoBehaviour {
 		GetComponent<AudioSource>().Play();
 		Instantiate(bullet_type, transform.position, transform.rotation * Quaternion.Euler(-Vector3.forward * 90));
 		Invoke("fireRateHandler", fireRate);
+	}
+
+	public void EnemyShoot () {
+		if (canShoot)
+		{
+			canShoot = false;
+			GetComponent<AudioSource>().clip = audioclip;
+			GetComponent<AudioSource>().Play();
+			GameObject cpy = Instantiate(bullet_type, transform.position, transform.rotation * Quaternion.Euler(-Vector3.forward * 90));
+			cpy.GetComponent<BulletScript>().enemy_bullet = true;
+			Invoke("fireRateHandler", fireRate);
+		}
 	}
 
 	public void drop () {

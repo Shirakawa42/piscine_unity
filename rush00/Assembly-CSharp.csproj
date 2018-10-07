@@ -54,10 +54,12 @@
      <Compile Include="Assets\Scripts\BulletScript.cs" />
      <Compile Include="Assets\Scripts\cameraFollow.cs" />
      <Compile Include="Assets\Scripts\destroyOnCollide.cs" />
+     <Compile Include="Assets\Scripts\EnemyScript.cs" />
      <Compile Include="Assets\Scripts\explosion.cs" />
      <Compile Include="Assets\Scripts\GroundWeapon.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\playerMovement.cs" />
+     <Compile Include="Assets\Scripts\rainbowColor.cs" />
      <Compile Include="Assets\Scripts\Weapon.cs" />
      <None Include="Assets\Fonts\friday13\Font License.txt" />
      <None Include="Assets\Fonts\d3digitalism\Read Me.txt" />

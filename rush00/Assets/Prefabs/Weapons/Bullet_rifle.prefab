@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 135746871412715080}
   m_Layer: 0
   m_Name: Bullet_rifle
-  m_TagString: AMMO
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,6 +104,9 @@ MonoBehaviour:
   range: 4
   katana: 0
   destroyOnCollide: 0
+  explode: 0
+  explosion: {fileID: 0}
+  explosion_scale: 1
 --- !u!135 &135696160109272810
 SphereCollider:
   m_ObjectHideFlags: 1

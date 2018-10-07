@@ -7,6 +7,9 @@ TagManager:
   - GroundWeapon
   - AMMO
   - MAP
+  - Wall
+  - DOOR
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -20,7 +23,7 @@ TagManager:
   - Player
   - Weapon
   - AMMO
-  - 
+  - Enemy
   - 
   - 
   - 

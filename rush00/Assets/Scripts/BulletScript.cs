@@ -21,13 +21,14 @@ public class BulletScript : MonoBehaviour {
 		}
 		else if (!enemy_bullet && other.tag == "Enemy")
 		{
-			// kill enemy
+			other.transform.parent.GetComponent<EnemyScript>().dead();
+			Die();
 		}
 		else if (other.tag == "AMMO" && katana)
 		{
 			Destroy(other.transform.parent.gameObject);
 		}
-		else if (destroyOnCollide && other.tag == "MAP")
+		else if (destroyOnCollide && (other.tag == "MAP" || other.tag == "DOOR"))
 		{
 			Die();
 		}
