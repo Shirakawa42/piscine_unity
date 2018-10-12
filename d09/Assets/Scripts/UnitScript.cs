@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class UnitScript : MonoBehaviour {
 
-	private int 	HP = 100;
+	public int 	HP = 100;
 
 	public void 	takeDamages(int damages) {
 		HP -= damages;
-		if (HP <= 0)
+		if (tag == "enemy")
+			GetComponent<EnemyScript>().OnHit();
+		else
+			GetComponent<BossCript>().OnHit();
+		if (HP <= 0) {
+			GameObject.Find("GameManager").GetComponent<gameManager>().unitCount--;
 			Destroy(gameObject);
+		}
 	}
 }
