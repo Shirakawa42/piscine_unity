@@ -7,10 +7,6 @@ public class SplatScript : MonoBehaviour {
 	public SpellScript		spellscript;
 	private RaycastHit 		hit;
 	private Ray 			ray;
-
-	void Start () {
-		
-	}
 	
 	void Update () {
 		ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -18,8 +14,9 @@ public class SplatScript : MonoBehaviour {
 			hit.point += new Vector3(0, transform.position.y, 0);
 			transform.position = hit.point;
 		}
-		if (Input.GetKeyDown(0)) {
-			
+		if (Input.GetMouseButtonDown(0)) {
+			spellscript.splatCast(transform.position, transform.rotation);
+			Destroy(gameObject);
 		}
 	}
 }

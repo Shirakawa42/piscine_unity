@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class frameBallScript : MonoBehaviour {
 
-	public  SpellScript		spellscript;
+	private  SpellScript		spellscript;
 	private float			time;
 	private int 			Damages;
 	private RaycastHit 		hit;
@@ -21,6 +21,7 @@ public class frameBallScript : MonoBehaviour {
 	}
 
 	void Start () {
+		spellscript = GetComponent<IAmASpellScript>().spellscript;
 		Damages = spellscript.Damages;
 		transform.position = GameObject.Find("Player").transform.position;
 		Invoke("Die", 6.0f);

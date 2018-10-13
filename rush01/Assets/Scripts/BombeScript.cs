@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BombeScript : MonoBehaviour {
 
-	public  SpellScript		spellscript;
+	private  SpellScript		spellscript;
 	private float			time;
 	private List<Collider>	colliders;
 	private int 			Damages;
@@ -17,6 +17,7 @@ public class BombeScript : MonoBehaviour {
 	}
 
 	void Start () {
+		spellscript = GetComponent<IAmASpellScript>().spellscript;
 		time = 2.0f;
 		Damages = spellscript.Damages;
 	}
