@@ -214,7 +214,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spells:
-  - {fileID: 114384413816670502, guid: 6d301becd2cad4d0197537812f6251ae, type: 2}
+  - {fileID: 114608861053609174, guid: a6976a4969e51409f9da9582a65d6641, type: 2}
+  - {fileID: 114136128525980606, guid: f96454591f62142a2a07c3f57a12d867, type: 2}
 --- !u!195 &566668037
 NavMeshAgent:
   m_ObjectHideFlags: 0
